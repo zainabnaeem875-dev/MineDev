@@ -103,7 +103,7 @@ export default function Header() {
     <header className="w-full flex justify-center">
       <div className="bar max-w-7xl w-full mx-auto flex items-center justify-between">
         <Link className="logo flex items-center" href="/" onClick={closeMenu}>
-          <i aria-hidden="true" />Your Agency
+          <i aria-hidden="true" />MineDev
         </Link>
         <nav
           ref={navRef}
@@ -150,7 +150,7 @@ export default function Header() {
           })}
         </nav>
         <div className="tools flex items-center gap-2">
-          <Link className="btn lt sm mag fcta" href="/contact">Free Consultation<i className="ar"><Icon name="arrow" /></i></Link>
+          <Link className="btn lt sm  fcta" href="/contact">Free Consultation<i className="ar"><Icon name="arrow" /></i></Link>
           <button
             className="ib bgr"
             type="button"

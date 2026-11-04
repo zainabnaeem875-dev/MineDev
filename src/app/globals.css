@@ -73,6 +73,8 @@ nav a.on:hover{color:#0B0F14}
 .ar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.22);transition:translate .25s}
 .lt .ar{background:rgba(11,15,20,.12)}
 .btn:hover .ar{translate:4px 0}
+.fcta{transition:translate .3s cubic-bezier(.34,1.56,.64,1)}
+.fcta:hover{translate:0 -4px}
 
 /* ─── Main Content ───────────────────────────────────────────────── */
 main{max-width:1160px;margin:auto;padding:0 12px}
