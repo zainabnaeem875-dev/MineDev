@@ -21,12 +21,12 @@ export default function HomePage() {
       <section className="fr hero sp bt w-full">
         <div>
           <Badge icon="chat"><span className="shm">On demand, live support</span></Badge>
-          <h1>Web apps &amp; AI that <span className="hl">grow</span> <span className="hl">your</span> <span className="hl">business</span></h1>
+          <h1>Web apps &amp; AI that <span className="hl">10x</span> <span className="hl">your</span> <span className="hl">Revenue</span></h1>
           <div className="cta flex items-center flex-wrap gap-3">
             <ActionLink href="/contact">Get started now</ActionLink>
             <ActionLink href="/services" light>Learn more</ActionLink>
           </div>
-          <p className="smt">Websites, web apps and AI automation, built to turn visitors into customers and save your team hours every week.</p>
+          <p className="smt">We build custom websites and AI solutions that give you an unbeatable edge over your competitors—turning every visitor into a customer so you never lose a deal.</p>
         </div>
         <HeroVisual />
       </section>
@@ -64,8 +64,8 @@ export default function HomePage() {
       {/* ═══ What We Offer ═══ */}
       <div className="hd w-full flex flex-col items-center justify-center text-center">
         <Badge icon="briefcase" className="rv">Business approach</Badge>
-        <h2>What we offer</h2>
-        <p>Everything your business needs on the web, from design and development to AI that works in the background.</p>
+        <h2>How It Makes You More Money</h2>
+        <p>We build high-converting websites and smart AI systems that save you time, cut manual work, and bring in more paying customers.</p>
       </div>
       <div className="grid w-full" id="mini">
         {serviceItems.slice(0, 6).map((service) => (

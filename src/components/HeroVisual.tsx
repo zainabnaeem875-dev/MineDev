@@ -30,8 +30,8 @@ export default function HeroVisual() {
 
       {/* Floating 24/7 stats card */}
       <div className="fl st rv">
-        <b>24/7</b>
-        <span>AI assistant always on for your visitors</span>
+        <b>10x</b>
+        <span>Revenue Generated with AI</span>
         <div className="bars">
           <u style={{ height: '35%' }} />
           <u style={{ height: '60%' }} />
@@ -44,12 +44,12 @@ export default function HeroVisual() {
       {/* Floating quality badge */}
       <div className="fl qc rv">
         <i><Icon name="check" /></i>
-        <span>Decided<br />Quality</span>
+        <span>Increase<br />Customers</span>
       </div>
 
       {/* Floating lead notification pill */}
       <div className="fl bb rv">
-        <Icon name="bot" />New lead qualified
+        <Icon name="cash" />+$12,400 Revenue
       </div>
     </div>
   )

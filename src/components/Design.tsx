@@ -33,6 +33,7 @@ const iconPaths: Record<string, string> = {
   gh: 'M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3.3-.4 6.8-1.6 6.8-7.3A5.7 5.7 0 0 0 21.3 4.8 5.3 5.3 0 0 0 21.2 1S20 .6 17 2.6a13.4 13.4 0 0 0-7 0C7 .6 5.8 1 5.8 1a5.3 5.3 0 0 0-.1 3.8A5.7 5.7 0 0 0 4.2 8.8c0 5.7 3.5 6.9 6.8 7.3a3.4 3.4 0 0 0-1 2.6V22',
   ig: 'M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5 4a4 4 0 1 0 8 0 4 4 0 0 0-8 0Zm9.5-5.5h.01',
   xx: 'M4 4l16 16M20 4 4 20',
+  cash: 'M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm4 6a6 6 0 0 1 12 0 6 6 0 0 1-12 0Zm6-3a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z',
 }
 
 export function Icon({ name, className = 'i' }: { name: string; className?: string }) {
@@ -62,12 +63,12 @@ export function PageFrame({ children }: { children: ReactNode }) {
 }
 
 export const serviceItems = [
-  { icon: 'globe', title: 'Custom Web Applications', description: 'Dashboards, portals, SaaS and internal tools built end to end.', status: 'Now' },
-  { icon: 'palette', title: 'UI/UX Design', description: 'Research, wireframes and polished interfaces that convert.', status: 'Now' },
-  { icon: 'cart', title: 'E-commerce', description: 'Stores, payments and inventory, built for speed.', status: 'Now' },
-  { icon: 'bot', title: 'AI Automation', description: 'Workflows that handle leads, emails, reports and data entry.', status: 'Now' },
-  { icon: 'chat', title: 'AI Chatbots & Agents', description: 'Assistants trained on your content, live on web and WhatsApp.', status: 'Now' },
-  { icon: 'plug', title: 'APIs & Integrations', description: 'Connect CRMs, payment gateways and third-party tools.', status: 'Now' },
+  { icon: 'globe', title: 'High-Performance Web Apps', description: 'Powerful custom apps and portals built to handle your business smoothly, scale without crashing, and keep your revenue flowing.', status: 'Now' },
+  { icon: 'palette', title: 'High-Converting Design', description: 'Stunning, user-friendly designs crafted specifically to turn casual website visitors into paying buyers.', status: 'Now' },
+  { icon: 'cart', title: 'Online Stores That Sell', description: 'Lightning-fast online stores with a seamless checkout process designed to double your daily online sales', status: 'Now' },
+  { icon: 'bot', title: 'Automated Workflows', description: 'Smart systems that handle customer emails, leads, and tasks automatically—saving your team hours and cutting overhead costs.', status: 'Now' },
+  { icon: 'chat', title: '24/7 Sales Assistant', description: 'An intelligent digital salesperson active on your website and WhatsApp round-the-clock, qualifying leads and closing deals while you sleep.', status: 'Now' },
+  { icon: 'plug', title: 'Seamless Connections', description: 'Connecting all your software, payment gateways, and tools into one smooth system so nothing ever slips through the cracks.', status: 'Now' },
   { icon: 'globe', title: 'Mobile & PWA', description: 'Installable apps that feel native on any phone.', status: 'Now' },
   { icon: 'rocket', title: 'SEO & Performance', description: 'Core Web Vitals, hosting, security and maintenance.', status: 'Now' },
   { icon: 'zap', title: 'Autonomous AI Agents', description: 'Agents that plan and complete multi-step business tasks.', status: 'Next' },
@@ -77,9 +78,72 @@ export const serviceItems = [
 ] as const
 
 export const projects = [
-  { id: 'saas', title: 'SaaS Analytics Dashboard', shortTitle: 'SaaS analytics dashboard', tag: 'Web app · Analytics', type: 'Web app', category: 'Dashboard', description: 'Role-based access, live charts and exports.', subtitle: 'One dashboard, many roles, and every number had to be trustworthy and live.', sector: 'SaaS', engagement: 'Web app build', status: 'Live', theme: '', challenge: 'The client’s team tracked sales and usage across spreadsheets and three separate tools. Managers needed one view, finance needed exports, and support staff needed to see only their own accounts. A generic admin template would have been slow with live data and impossible to lock down by role.', technologies: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'Chart.js', 'Vercel'], built: [['Role-based access', 'Admins, managers and agents each see only what they need, enforced on the server.'], ['Live charts', 'Data refreshes in the background so numbers are current without reloading the page.'], ['One-click exports', 'Reports download as CSV or PDF with the filters already applied.'], ['Built to scale', 'Paginated queries and caching keep the dashboard fast as the data grows.']] },
-  { id: 'ai', title: 'AI Support Agent', shortTitle: 'AI support agent', tag: 'AI · Chatbot', type: 'AI', category: 'Chatbot', description: 'Answers customer questions from the client’s own documents.', subtitle: 'An assistant that answers from the client’s own documents, in the customer’s language.', sector: 'Customer support', engagement: 'AI agent build', status: 'Live', theme: 'b', challenge: 'Support staff were answering the same questions all day, and a basic FAQ bot kept giving wrong or invented answers. The assistant had to stick to the company’s own content, admit when it didn’t know, and hand over to a human without losing the conversation.', technologies: ['OpenAI', 'Python', 'LangChain', 'Pinecone', 'WhatsApp API', 'React'], built: [['Answers from your content', 'Documents are indexed so replies come from the client’s own material, not guesses.'], ['Human handover', 'When confidence is low, the chat passes to a team member with the full history.'], ['Web and WhatsApp', 'The same assistant runs on the website and on WhatsApp.'], ['Lead capture', 'Name, email and need are collected and sent straight to the CRM.']] },
-  { id: 'store', title: 'Online Store', shortTitle: 'Online store', tag: 'E-commerce · Automation', type: 'E-commerce', category: 'Automation', description: 'Fast storefront with automated order flows.', subtitle: 'A fast storefront where every order moves on its own.', sector: 'Retail', engagement: 'Store build', status: 'Live', theme: 'c', challenge: 'The shop had products on social media but no way to take payments or track stock, so orders arrived by message and were copied by hand. The store had to load quickly on mobile, accept local and card payments, and stop overselling items.', technologies: ['Shopify', 'Liquid', 'Stripe', 'Zapier', 'Google Analytics'], built: [['Mobile-first storefront', 'Lightweight pages and clear product filters that work well on a phone.'], ['Payments wired in', 'Card and local payment options, with confirmation emails sent automatically.'], ['Live inventory', 'Stock updates after every sale so sold-out items can’t be ordered.'], ['Automated order flow', 'New orders trigger invoices, courier details and customer updates without manual work.']] },
+  {
+    id: 'saas',
+    title: 'Azzivone',
+    shortTitle: 'E-commerce | Luxury Brand',
+    tag: 'Pakistan’s Premier Luxury Store',
+    type: 'Luxury E-commerce',
+    category: 'E-commerce',
+    description: 'A high-end, lightning-fast digital storefront built to deliver an exclusive shopping experience and drive premium sales.',
+    subtitle: 'A premium D2C shopping experience designed for high conversions and speed.',
+    sector: 'Fashion & Luxury',
+    engagement: 'Store & Brand Build',
+    status: 'Live',
+    theme: '',
+    challenge: 'The client needed a luxurious online presence that reflected their high-end brand identity while offering ultra-fast page load speeds, seamless payment integrations, and zero inventory friction during high-traffic sales.',
+    technologies: ['Next.js', 'React', 'Shopify Plus', 'Stripe', 'Tailwind CSS', 'Vercel'],
+    built: [
+      ['Luxury UI/UX', 'Custom high-end interface tailored to convey brand exclusivity.'],
+      ['Lightning-Fast Checkout', 'Optimized checkout flow reducing cart abandonment rates.'],
+      ['Automated Inventory', 'Real-time stock synchronization across warehouse and storefront.'],
+      ['Mobile Optimization', 'Fluid mobile navigation delivering an app-like shopping experience.']
+    ]
+  },
+  {
+    id: 'ai',
+    title: 'DocNode',
+    shortTitle: 'AI Healthcare Platform',
+    tag: 'Web App · AI Systems',
+    type: 'Healthcare Technology',
+    category: 'AI Automation',
+    description: 'AI-Powered Hospital Management System that automates patient records, scheduling, and hospital workflows seamlessly.',
+    subtitle: 'Streamlining hospital management and patient records with intelligent automation.',
+    sector: 'Healthcare',
+    engagement: 'Full-Stack & AI Build',
+    status: 'Live',
+    theme: 'b',
+    challenge: 'Hospitals faced immense delays due to manual patient onboarding, scattered medical records, and inefficient appointment scheduling, which increased administrative costs and reduced patient satisfaction.',
+    technologies: ['React', 'Python', 'FastAPI', 'PostgreSQL', 'OpenAI API', 'Docker'],
+    built: [
+      ['Smart Patient Triage', 'AI agent categorizes patient inquiries and schedules urgent care appointments.'],
+      ['Automated EMR Management', 'Instant record updates and summaries generated from patient interactions.'],
+      ['Staff Allocation Dashboard', 'Real-time tracking of doctor availability and ward capacities.'],
+      ['Secure Data Compliance', 'Role-based encryption ensuring patient health records remain confidential.']
+    ]
+  },
+  {
+    id: 'store',
+    title: 'LeadBot',
+    shortTitle: 'AI CRM & Assistant',
+    tag: 'AI Agent · Messaging CRM',
+    type: 'AI System',
+    category: 'Sales Automation',
+    description: 'AI-powered CRM and phone messaging assistant that handles incoming leads, calls, and customer chats 24/7.',
+    subtitle: 'An intelligent digital assistant that qualifies leads and closes sales on autopilot.',
+    sector: 'Sales & Customer Engagement',
+    engagement: 'AI Agent & CRM Build',
+    status: 'Live',
+    theme: 'c',
+    challenge: 'Businesses were losing potential clients outside of operating hours because human agents could not respond instantly to phone calls, WhatsApp messages, and website leads.',
+    technologies: ['OpenAI', 'Python', 'WhatsApp Business API', 'Twilio', 'Node.js', 'MongoDB'],
+    built: [
+      ['24/7 Phone & Chat Agent', 'Responds to inquiries across WhatsApp, SMS, and web instantly.'],
+      ['Automated Lead Qualification', 'Asks custom qualifying questions and tags high-value prospects.'],
+      ['CRM Auto-Sync', 'Directly creates and updates deals in the client’s existing sales pipeline.'],
+      ['Smart Human Handover', 'Seamlessly routes hot leads to sales reps with full chat history.']
+    ]
+  },
 ] as const
 
 export function ProjectCard({ project }: { project: (typeof projects)[number] }) {

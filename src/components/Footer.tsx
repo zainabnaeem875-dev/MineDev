@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="soc flex items-center">
               <a href="https://www.linkedin.com/" aria-label="LinkedIn"><span>in</span></a>
               <a href="https://github.com/" aria-label="GitHub"><span>⌘</span></a>
-              <a href="https://www.instagram.com/" aria-label="Instagram"><span>◎</span></a>
+              <a href="https://www.instagram.com/minedev_agency" aria-label="Instagram"><span>◎</span></a>
               <a href="https://x.com/" aria-label="X"><span>𝕏</span></a>
             </div>
           </div>

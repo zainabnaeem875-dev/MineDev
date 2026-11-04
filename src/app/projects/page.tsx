@@ -5,7 +5,7 @@ export default function ProjectsPage() {
     <PageFrame>
       <div className="hd w-full flex flex-col items-center justify-center text-center" style={{ marginTop: 40 }}>
         <Badge icon="folder" className="rv">Our work</Badge>
-        <h1>Selected projects</h1>
+        <h1>Projects That are making Money</h1>
         <p>A few examples of web apps, AI experiences and commerce workflows built for ambitious teams.</p>
       </div>
       <div className="grid w-full">
