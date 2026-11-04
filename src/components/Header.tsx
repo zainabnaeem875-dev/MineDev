@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useRef, useState } from 'react'
 import { Icon } from './Design'
+import gsap from 'gsap'
 
 const navigation = [
   { label: 'Home', href: '/' },
@@ -19,8 +20,56 @@ type Bubble = { left: number; top: number; width: number; height: number }
 export default function Header() {
   const pathname = usePathname()
   const navRef = useRef<HTMLElement>(null)
+  const lastLink = useRef<HTMLAnchorElement | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [bubble, setBubble] = useState<Bubble | null>(null)
+
+  function waterBubbles(target: HTMLAnchorElement) {
+    const nav = navRef.current
+    if (!nav || window.matchMedia('(max-width: 900px)').matches) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    const link = target.getBoundingClientRect()
+    const bounds = nav.getBoundingClientRect()
+
+    for (let i = 0; i < 12; i++) {
+      const b = document.createElement('span')
+      b.className = 'bb2'
+      const size = 2 + Math.random() * 4
+      b.style.width = `${size}px`
+      b.style.height = `${size}px`
+      b.style.left = `${link.left - bounds.left + Math.random() * link.width}px`
+      b.style.top = `${link.top - bounds.top + link.height * 0.6}px`
+      nav.appendChild(b)
+
+      gsap.fromTo(
+        b,
+        { scale: 0, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.25,
+          delay: i * 0.04,
+          ease: 'back.out(2)',
+        }
+      )
+      gsap.to(b, {
+        y: -(30 + Math.random() * 35),
+        x: (Math.random() - 0.5) * 30,
+        duration: 1 + Math.random() * 0.7,
+        delay: i * 0.04,
+        ease: 'sine.out',
+      })
+      gsap.to(b, {
+        opacity: 0,
+        scale: 1.4,
+        duration: 0.35,
+        delay: i * 0.04 + 0.85,
+        ease: 'power1.in',
+        onComplete: () => b.remove(),
+      })
+    }
+  }
 
   function moveBubble(target: HTMLAnchorElement) {
     const nav = navRef.current
@@ -33,11 +82,21 @@ export default function Header() {
       width: link.width + 8,
       height: link.height + 4,
     })
+    // water bubbles sirf naye link par aane par
+    if (lastLink.current !== target) {
+      lastLink.current = target
+      waterBubbles(target)
+    }
+  }
+
+  function hideBubble() {
+    setBubble(null)
+    lastLink.current = null
   }
 
   function closeMenu() {
     setMenuOpen(false)
-    setBubble(null)
+    hideBubble()
   }
 
   return (
@@ -55,13 +114,13 @@ export default function Header() {
             const link = (event.target as HTMLElement).closest('a')
             if (link instanceof HTMLAnchorElement) moveBubble(link)
           }}
-          onPointerLeave={() => setBubble(null)}
+          onPointerLeave={hideBubble}
           onFocusCapture={(event) => {
             const link = (event.target as HTMLElement).closest('a')
             if (link instanceof HTMLAnchorElement) moveBubble(link)
           }}
           onBlur={(event) => {
-            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setBubble(null)
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) hideBubble()
           }}
         >
           <b className="pill" aria-hidden="true" />
